@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production --output ./output/main.js",
-    "dev":"webpack --mode development --output ./output/main.js"
+    "dev": "webpack --mode development ./src/es/index.js --module-bind js=babel-loader",
+    "build": "webpack --mode production ./src/es/index.js --module-bind js=babel-loader"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "babel-loader": "^8.0.6",
     "i": "^0.3.6",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
